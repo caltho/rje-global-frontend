@@ -31,7 +31,7 @@ export default function DataTable({ headers, data }: any) {
       <Table variant="simple" size="sm">
         <Thead>
           <Tr>
-            {headers.map((header: string, index: number) => (
+            {data[0].map((header: string, index: number) => (
               <Th key={index}>{header}</Th>
             ))}
           </Tr>
@@ -52,7 +52,7 @@ export default function DataTable({ headers, data }: any) {
                         key={colIndex}
                       />
                     ) : (
-                      <Td key={colIndex}>{item}</Td>
+                      <Td key={rowIndex + colIndex}>{item}</Td>
                     )
                   )}
                 </Tr>

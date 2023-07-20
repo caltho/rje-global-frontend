@@ -32,7 +32,7 @@ export default function Home() {
           </Button>
         </Center>
         <Center py={4}>
-          <DataTable data={fileData} headers={headers} />
+          {fileData != null && <DataTable data={fileData} headers={headers} />}
         </Center>
         <Container py={4}>
           <Heading size="md" py={2}>
@@ -40,7 +40,7 @@ export default function Home() {
           </Heading>
           <Text>
             {fileData == null
-              ? "No errors to show"
+              ? "No data to show"
               : "List of errors output here..."}
           </Text>
         </Container>
@@ -49,7 +49,7 @@ export default function Home() {
   );
 }
 
-// Headers should be retrieved from the validationMaps file
+// Headers could be retrieved from the validationMaps file
 const headers = [
   "Not A Field",
   " Project",
