@@ -1,5 +1,12 @@
 "use client";
-import { Flex, Center, Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Center,
+  Button,
+  Heading,
+  Container,
+  Text,
+} from "@chakra-ui/react";
 import Nav from "./components/navbar";
 import Navbar from "./components/navbar";
 import FilePicker from "./components/filePicker";
@@ -27,11 +34,22 @@ export default function Home() {
         <Center py={4}>
           <DataTable data={fileData} headers={headers} />
         </Center>
+        <Container py={4}>
+          <Heading size="md" py={2}>
+            Errors:
+          </Heading>
+          <Text>
+            {fileData == null
+              ? "No errors to show"
+              : "List of errors output here..."}
+          </Text>
+        </Container>
       </Flex>
     </Flex>
   );
 }
 
+// Headers should be retrieved from the validationMaps file
 const headers = [
   "Not A Field",
   " Project",
